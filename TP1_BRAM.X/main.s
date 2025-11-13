@@ -53,7 +53,7 @@ init:
     ; Compteur LSB et MSB
     
     clrf compteur_lsb    ; compteur_lsb = 0x00 
-    clrf compteur_msb   ; compteur_msb = 0x00 (MSB). Init à 0x0000.
+    clrf compteur_msb   ; compteur_msb = 0x00, on init à 0.
     
     
     goto loop
