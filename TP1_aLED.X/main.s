@@ -13,7 +13,7 @@ org     0x000
 goto init 
    
 ; Entrees/Sorties
-; LEDO : RCO   
+; LEDO : RCO 
    
 ; Vecteur d'interruption haute priorite ========================================
 org     0x008
