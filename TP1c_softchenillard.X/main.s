@@ -86,7 +86,7 @@ idle_check:
 counter_loop:
 
     addwf 1
-    bc nextByte         ; Overflow ? passer au MSB
+    bc nextByte         ; Overflow ? passer au MSB (incrémente)
 
     ; tempo
     nop
@@ -103,7 +103,7 @@ nextByte:
 
     bc rotate_leds      ; MSB overflow ? on avance le chenillard
 
-    goto idle_check
+    goto idle_check ; sinon back to idle
 
 
 
@@ -111,7 +111,7 @@ nextByte:
 ; Routine du chenillard
 rotate_leds:
 
-    movf Ledmove,W
+    movf Ledmove,W ; on charge le motif actuel
 
     ; BP1 = RA6 ? rotation droite
     btfss PORTA,6
@@ -121,7 +121,7 @@ rotate_leds:
     btfss PORTA,7
         rlncf Ledmove
 
-    movff Ledmove, LATC
+    movff Ledmove, LATC ; on affiche
 
     goto idle_check
 
