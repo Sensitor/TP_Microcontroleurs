@@ -85,7 +85,7 @@ idle_check:
 
 counter_loop:
 
-    addwf 1
+    addlw 1
     bc nextByte         ; Overflow ? passer au MSB (incrémente)
 
     ; tempo
