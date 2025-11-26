@@ -26,11 +26,10 @@ init:
     call init_matrix ; on appelle la routine
     call init_timer2 ; init du timer 2
     
-    goto loop
+    goto wait
 
-loop: 
 
-   
+
 wait: 
     
     BANKSEL PIR4
@@ -41,7 +40,7 @@ wait:
     
     call bip_led ; on toggle 
     
-    goto loop
+    goto wait
     
 
     
@@ -63,6 +62,7 @@ init_timer2:
     BANKSEL T2PR
     movlw 0x00
     movwf T2PR  ; 
+    return
      
     
 bip_led:
