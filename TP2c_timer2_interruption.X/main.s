@@ -8,7 +8,7 @@ config WDTE = OFF              ; Desactiver le watchdog	timer
 	
     
 PSECT   code, abs
-   
+
 ; Vecteur de reset =============================================================
 org     0x000
 goto init 
