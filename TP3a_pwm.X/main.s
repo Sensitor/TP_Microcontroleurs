@@ -1,14 +1,12 @@
 PROCESSOR 18F25K40
 #include <xc.inc>
 
-;===============================================================================
-; CONFIGURATION
-;===============================================================================
-config FEXTOSC = OFF
-config RSTOSC  = HFINTOSC_64MHZ
-config WDTE    = OFF
-
-PSECT code, abs
+; Configuration ================================================================
+config FEXTOSC = OFF           ; Pas de source d'horloge externe
+config RSTOSC = HFINTOSC_64MHZ ; Horloge interne de 64 MHz
+config WDTE = OFF              ; Desactiver le watchdog	timer
+	
+PSECT   code, abs
 
 org 0x000
     goto init
